@@ -5,16 +5,12 @@ set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
-set(CMAKE_PREFIX_PATH "D:/Software/Qt/6.3.1/msvc2019_64")
+set(CMAKE_PREFIX_PATH "D:/Software/Qt/6.3.1/msvc2019_64/lib/cmake/")
 
 add_executable(CloudMusicHex main.cpp jsoncpp.cpp json/json-forwards.h json/json.h header.h initializeFile.cpp initializeFile.h ID3BitsWrite.cpp ID3BitsWrite.h jsonParse.cpp jsonParse.h
         rsc/logo.rc Mp3.cpp Mp3.h mainWindow.h mainWindow.cpp)
 
-find_package(Qt6 COMPONENTS
-        Core
-        Gui
-        Widgets
-        REQUIRED)
+find_package(Qt6 REQUIRED COMPONENTS Core Gui Widgets)
 
 target_link_libraries(CloudMusicHex
         Qt::Core
